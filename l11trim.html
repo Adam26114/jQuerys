@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>trim Method</title>
+          <!-- icon -->
+        <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
+    </head>
+    <body>
+        
+
+         <!-- jq js1 -->
+    <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // console.log('hi');
+
+            // var something =      Welcome to jQuery lessons
+            var something ='\n\n        Welcome to jQuery lessons'
+            console.log('before using trim = ' + something);
+
+            // Method1
+            something = jQuery.trim(something);
+            console.log('After using trim '+ something);
+
+            // Method2
+            something = $.trim(something);
+            console.log('After using trim '+ something);
+        });    
+    </script>
+    </body>
+</html>
