@@ -35,16 +35,20 @@
             <input type="checkbox" name="position" id="chk3" class="" value="3"/><label for="chk3">Right</label>
         </div>
 
-        <br>
+        <br/>
 
         <div id="btn5">
             <fieldset>
-                <legend>Selet your fav color</legend>
+                <legend>Selet your fav color :</legend>
                 <input type="radio" name="position" id="favwhi" class="" value="1"/><label for="favwhi">White</label>
                 <input type="radio" name="position" id="favdak" class="" value="2"/><label for="favdak">Dark</label>
                 <input type="radio" name="position" id="favred" class="" value="3"/><label for="favred">Red</label>
             </fieldset>
         </div>
+
+        <br/><br/>
+
+        <button type="button" id="btn6">Button</button>
 
     </div>
     
@@ -61,8 +65,13 @@
             
             //for color
             $('#btn5'),buttonset()
-
             
+            
+            $('#btn6'),button({
+                icon:{
+                    primry:'ui-icon-heart'
+                }
+            })
 
         });
     </script>
