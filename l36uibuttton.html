@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>UI button Method</title>
+    <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
     <link  href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
     <style type="text/css">
         body{
@@ -29,6 +30,8 @@
         <input type="submit" name="submit" id="btn2" value="This is submit button"/>
         <a href="#" id="btn3">This is an anchor</a>
 
+        <br>
+
         <div id="btn4">
             <input type="checkbox" name="position" id="chk1" class="" value="1" /><label for="chk1">Left</label>
             <input type="checkbox" name="position" id="chk2" class="" value="2"/><label for="chk2">Center</label>
@@ -49,6 +52,10 @@
         <br/><br/>
 
         <button type="button" id="btn6">Button</button>
+        
+        <br/><br/>
+
+        <button type="button" id="btn7">Button</button>
 
     </div>
     
@@ -68,9 +75,20 @@
             
             
             $('#btn6').button({
-                icon:{
-                    primry:'ui-icon-heart'
-                }
+                icons:{
+                    primary:'ui-icon-heart'
+                },
+
+                // text:false
+                showLabel:false
+            })
+
+
+            $('#btn7').button({
+                icons:{
+                    primary:"ui-icon-trash"
+                },
+                label:"Click Me"
             })
 
         });
