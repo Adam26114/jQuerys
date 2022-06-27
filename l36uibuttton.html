@@ -54,6 +54,8 @@
 
         <button type="button" id="btn7">Button</button>
 
+        <button type="button" id="btn8">Button Disable</button>
+
     </div>
     
     <script src="./libs/jquery-3.6.0.min.js"></script>
@@ -65,10 +67,10 @@
             $('#btn1,#btn2,#btn3').button();
 
             //for postion
-            $('#btn4').buttonset()
+            $('#btn4').buttonset();
             
             //for color
-            $('#btn5').buttonset()
+            $('#btn5').buttonset();
             
             
             $('#btn6').button({
@@ -78,7 +80,7 @@
 
                 // text:false
                 showLabel:false
-            })
+            });
 
 
             $('#btn7').button({
@@ -90,7 +92,11 @@
                 iconPosition:"end",
                 // iconPosition:"top",
                 // iconPosition:"bottom",
-            })
+            });
+
+            $('#btn8').button({
+                disabled:true
+            });
 
         });
     </script>
