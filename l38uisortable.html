@@ -50,56 +50,56 @@
                 <th>Category</th>
             </thead>
             <tbody>
-                <tr>
+                <tr class="mov">
                     <td>1001</td>
                     <td>Redbull</td>
                     <td>70</td>
                     <td>10</td>
                     <td>Food</td>
                 </tr>
-                <tr>
+                <tr class="mov">
                     <td>1002</td>
                     <td>Sponsor</td>
                     <td>500</td>
                     <td>30</td>
                     <td>Food</td>
                 </tr>
-                <tr>
+                <tr class="stop">
                     <td>1003</td>
                     <td>Face masks</td>
                     <td>50</td>
                     <td>20</td>
                     <td>Non Food</td>
                 </tr>
-                <tr>
+                <tr class="stop">
                     <td>1004</td>
                     <td>Santiser</td>
                     <td>200</td>
                     <td>50</td>
                     <td>Non Food</td>
                 </tr>
-                <tr>
+                <tr class="stop">
                     <td>1005</td>
                     <td>Shower Gel</td>
                     <td>200</td>
                     <td>50</td>
                     <td>Non Food</td>
                 </tr>
-                <tr>
+                <tr class="stop">
                     <td>1006</td>
                     <td>Shamppo</td>
                     <td>100</td>
                     <td>300</td>
                     <td>Non Food</td>
                 </tr>
-                <tr>
+                <tr class="mov">
                     <td>1007</td>
                     <td>Drinkng Water</td>
                     <td>300</td>
                     <td>70</td>
                     <td>Food</td>
                 </tr>
-                <tr>
+                <tr class="mov">
                     <td>1008</td>
                     <td>Cheese</td>
                     <td>120</td>
@@ -122,14 +122,14 @@
                 <th>Category</th>
             </thead>
             <tbody>
-                <tr>
+                <tr class="mov">
                     <td>1009</td>
                     <td>Jelly</td>
                     <td>100</td>
                     <td>300</td>
                     <td>Food</td>
                 </tr>
-                <tr>
+                <tr class="mov">
                     <td>1010</td>
                     <td>Cake</td>
                     <td>300</td>
@@ -151,21 +151,29 @@
                 // axis:"x",
                 // axis:"y",
 
-                // containment:"#mydata",a
+                containment:"#containertwo",
 
                 // we can calll to class but no need  to put ","
                 placeholder:'spacing',
 
-                connectWith:"#mydatatwo tbody"
+                connectWith:"#mydatatwo tbody",
+
+                cancel:".stop",
+                // we can move but can't put into CANCEL items singlee orr group
+                items:'.mov'
             });
             
             $('#mydatatwo tbody').sortable({
                 
                 placeholder:'spacing',
 
-                connectWith:"#mydata tbody"
+                connectWith:"#mydata tbody",
+
+                cancel:".mov"
             });
         });
     </script>
 </body>
 </html>
+
+<!-- 28ST -->
