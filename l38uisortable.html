@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Ui sortable method</title>
+    <!-- icon -->
     <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
     <link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -26,6 +27,10 @@
 
         tr{
             cursor:pointer;
+        }
+
+        .spacing{
+            background-color:skyblue;
         }
     </style>
 </head>
@@ -109,7 +114,15 @@
         $(document).ready(function(){
             // console.log('hi');
 
-            $('#mydata tbody').sortable();
+            $('#mydata tbody').sortable({
+                // axis:"x",
+                // axis:"y",
+
+                containment:"#mydata",
+
+                // we can calll to class but no need  to put ","
+                placeholder:'spacing'
+            });
         });
     </script>
 </body>
