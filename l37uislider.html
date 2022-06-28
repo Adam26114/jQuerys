@@ -73,12 +73,30 @@
                 min:10,
                 max:200,
                 // value:20,
-                step:20
+                step:20,
+
+                // vartical silder bar 
+                orientation:'vertical',
+
+                change:function(e,jqui){
+                    console.log('this is change = ',jqui.value);
+                },
+
+                start:function(e,jqui){
+                    console.log('this is start = ',jqui.value);
+                },
+
+                stop:function(e,jqui){
+                    console.log('this is stop = ',jqui.value);
+                }
+
             }).css("background-color","steelblue");
 
-            $('#myslider > span').css({
-                'background-color':'yellow'
-            })
+            // $('#myslider > span').css({
+            //     'background-color':'yellow'
+            // });
+
+            $('#myslider').children("span").css("background-color","violet");
         });
     </script>
 </body>
