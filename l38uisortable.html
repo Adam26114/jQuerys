@@ -151,7 +151,7 @@
                 // axis:"x",
                 // axis:"y",
 
-                containment:"#containertwo",
+                // containment:"#containertwo",
 
                 // we can calll to class but no need  to put ","
                 placeholder:'spacing',
@@ -160,7 +160,12 @@
 
                 cancel:".stop",
                 // we can move but can't put into CANCEL items singlee orr group
-                items:'.mov'
+                items:'.mov',
+
+                // cursor:'grab',
+                // cursor:'move',
+                cursor:'crosshair',
+
             });
             
             $('#mydatatwo tbody').sortable({
