@@ -36,9 +36,24 @@
 <body>
 
     <div class="container">
+        
         <div id="dragme" class="box">
             <p>Drag Me wherever you want !!!</p>
         </div>
+
+
+        <div id="dragmeonx" class="box">
+            <p>Drag Me On X !!!</p>
+        </div>
+       
+        <div id="dragmeony" class="box">
+            <p>Drag Me On Y !!!</p>
+        </div>
+        
+        <div id="dragmeoncnt" class="box">
+            <p>Drag Me On container area only !!!</p>
+        </div>
+
     </div>
 
 
@@ -49,9 +64,39 @@
             // console.log('h1');
 
             $('#dragme').draggable({
-                cursor:'grab',
-                cursor:'move',
+                // cursor:'grab',
+                // cursor:'move',
                 cursor:'crosshair',
+            });
+
+            $('#dragmeonx').draggable({
+                axis:'x',
+            });
+           
+            $('#dragmeony').draggable({
+                axis:'y',
+            });
+            
+            // $('#dragmeoncnt').draggable({
+            //     containment:'.container'
+            // });
+            
+            // $('#dragme,#dragmeoncnt').draggable({
+            //     cancel:'#dragmeoncnt'
+            // });
+
+            $('#dragme').draggable({
+                start:function(){
+                    $(this).css("background-color",'violet');
+                },
+
+                drag:function(){
+                    $(this).text('Element is moving...')
+                },
+
+                stop:function(){
+                    $(this).text('Element stopped !!!')
+                }
             });
         });
     </script>
