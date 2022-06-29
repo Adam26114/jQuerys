@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>UI draggable Method</title>
+    <!-- icon -->
+    <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
     <link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         body{
@@ -9,6 +11,13 @@
             display:flex;
             justify-content:center;
             align-items:center;
+        }
+
+        .container{
+            width:900px;
+            height:700px;
+            background-color:#f4f4f4;
+            box-shadow:20px 10px 5px #777;
         }
 
         .box{
@@ -21,6 +30,7 @@
             justify-content:center;
             align-items:center;
         }
+
     </style>
 </head>
 <body>
@@ -38,7 +48,11 @@
         $(document).ready(function(){
             // console.log('h1');
 
-            $('#dragme').draggable();
+            $('#dragme').draggable({
+                cursor:'grab',
+                cursor:'move',
+                cursor:'crosshair',
+            });
         });
     </script>
 </body>
