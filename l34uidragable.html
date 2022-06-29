@@ -96,7 +96,19 @@
 
                 stop:function(){
                     $(this).text('Element stopped !!!')
-                }
+                },
+
+                // revert:true,
+
+                // revertDuration:2000,
+
+                revert:function(){
+                    $(this).css('background-color','orange');
+                    return true
+                },
+
+                revertDuration:3000,//1s = 1000ms
+
             });
         });
     </script>
