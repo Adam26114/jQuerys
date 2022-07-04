@@ -21,10 +21,6 @@
             padding:20px;
         }
 
-        .form-group{
-            margin:20px 0;
-        }
-
         .form-group label{
             display:block;
             font-size:20px;
@@ -62,9 +58,33 @@
     <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
     <!-- custom js -->
     <script type="text/javascript">
-        // console.log('hi');
+        // console.log('hi')
+		$('#workingday').datepicker();
 
-        $("#workingday").datapicker();
+        $('#multiviews').datepicker({
+            numberOfMonths:3,
+            // dateFormat:'yy-mm-dd', //2022-7-04
+            // dateFormat:'dd-mm-yy', //04-7-2022
+            // dateFormat:'yy-MM-dd', //2022-July-04
+            dateFormat:'dd MM yy' //2022-July-04
+        });
+
+        $('#btn').button({
+            icons:{
+                primary:'ui-icon-refresh'
+            }
+        }).click(function(e){
+            console.log('hey i am working')
+            var getworkingday = $('#workingday').val();
+            var getmultiviews = $('#multiviews').val();
+
+            // fomat dd/mm/yy
+            console.log('this is working day =',getworkingday)
+            console.log('this is multi views =',getmultiviews);
+
+            e.preventDefault();
+
+        });
     </script>
 </body>
 </html>
