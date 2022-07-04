@@ -28,7 +28,9 @@
             // console.log('hi');
 
             $('.dbox').dialog({
-                autoOpen:false
+                autoOpen:false,
+                width:500,
+                height:200
             });
 
             // For Click Me Button
@@ -44,7 +46,7 @@
             });
 
             $(".tgbtn").click(function(){
-                $(".dbox").dialog("is open") === false ? $(".dbox").dialog("open") : $(".dbox").dialog("close");
+                $(".dbox").dialog("isOpen") === false ? $(".dbox").dialog("open") : $(".dbox").dialog("close");
             });
         });
     </script>
