@@ -24,14 +24,16 @@
 
     <div class="container">
         <h3>Welcome to jQuery Tooltip</h3>
-        <p>it is used in conjuction with a cursor , when a user hover the pointer over an item wothout clicking</p>
+        <p><a href="#" id="ttone">it is used</a> in conjuction with a cursor , when a user hover the pointer over an item wothout clicking</p>
     </div>
     
     <script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
     <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            console.log('h1');
+            // console.log('h1');
+
+            $("#ttone").tooltip();
         });
     </script>
 </body>
