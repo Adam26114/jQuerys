@@ -12,6 +12,7 @@
         }
 
         body{
+            font-family:sans-serif;
             height:100vh;
 
             display:flex;
@@ -48,15 +49,15 @@
         <form action="" method="">
             <div class="form-group">
                 <label for="arrival">Arrival Date :</label>
-                <input type="date" name="arrival" id="arrival" class="form-control" readonly/>
+                <input type="text" name="arrival" id="arrival" class="form-control" readonly/>
             </div>
             <div class="form-group">
                 <label for="bookingstart">Booking Start Date :</label>
-                <input type="date" name="bookingstart" id="bookingstart" class="form-control" readonly/>
+                <input type="text" name="bookingstart" id="bookingstart" class="form-control" readonly/>
             </div>
             <div class="form-group">
                 <label for="bookingend">Booking End Date :</label>
-                <input type="date" name="bookingend" id="bookingend" class="form-control" readonly/>
+                <input type="text" name="bookingend" id="bookingend" class="form-control" readonly/>
             </div>
         </form>
     </div>
@@ -68,7 +69,9 @@
     <!-- custom js -->
     <script type="text/javascript">
         $(document).ready(function(){
-            console.log('hi');
+            // console.log('hi');
+
+            $('#arrival').datepicker()
         });
     </script>
     
