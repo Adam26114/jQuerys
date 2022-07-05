@@ -93,6 +93,28 @@
                 minDate:'07/02/2022',
                 maxDate:"08/05/2022"
             });
+
+            $('#bookingstart').datepicker({
+                numberOfMonths:1,
+                showAnim:"slideDown",
+                dateFormat:"dd-mm-yy",
+
+                minDate:"07-02-2022",
+
+                onClose:function(selectdate){
+                    $("#bookingend").datepicker("option","minDate",selectdate);
+                }
+            });
+            
+            $('#bookingend').datepicker({
+                numberOfMonths:1,
+                showAnim:"slideDown",
+                dateFormat:"dd-mm-yy",
+
+                onClose:function(selectdate){
+                    $("#bookingstart").datepicker("option","maxDate",selectdate);
+                }
+            });
         });
     </script>
     
