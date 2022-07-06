@@ -40,36 +40,39 @@
         $(document).ready(function(){
             // console.log('h1');
 
-            $("#ttone").tooltip({
+            // $("#ttone").tooltip({
                 // show:3000,
                 // hide:5000
 
                 // show:"bounce",
                 // hide:"explode"
 
-                hide:{
-                    effect:"explode",
-                    duration:3000
-                },
+                // hide:{
+                //     effect:"explode",
+                //     duration:3000
+                // },
 
-                show:{
-                    effect:"shake",
-                    duration:2000
-                },
+                // show:{
+                //     effect:"shake",
+                //     duration:2000
+                // },
 
-                track:true,
+                // track:true,
 
-                content:'This is jQuery UI. Thanks for using our libs.',
+            //     content:'This is jQuery UI. Thanks for using our libs.',
 
-                content:function(){
-                    // return"<img src='./img/logo1.png' width='150px'/>"
+            //     content:function(){
+            //         // return"<img src='./img/logo1.png' width='150px'/>"
 
-                    return"<img src='./img/logo1.png' width='150px'/><h5>This isour company logo</h5><smaiil>  Lorem, ipsum dolor sit amet consectetur adipisicing elit.</small>"
-                }
+            //         return"<img src='./img/logo1.png' width='150px'/><h5>This isour company logo</h5><smaiil>  Lorem, ipsum dolor sit amet consectetur adipisicing elit.</small>"
+            //     }
 
-                
-                
-            });
+            // });
+
+            $("#dob").tooltip().datepicker();
+
+            $(document).tooltip();    //အကုန်လု့းကိုtooltip ပေးလိုက်တာ
+
         });
     </script>
 </body>
