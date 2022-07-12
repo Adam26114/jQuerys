@@ -40,8 +40,8 @@
         <h1>My Fav Fruts</h1>
         
         <ol>
-            <li>Apple</li>
-            <li>Orange</li>
+            <li style="display:none;">Apple</li>
+            <li >Orange</li>
             <li></li>
             <li></li>
             <li>Mango</li>
@@ -57,7 +57,10 @@
             // console.log('hi');
 
             //:visible
-            
+            // $(':visible').css("background-color","steelblue");
+            // $('ul li:visible').css("background-color","steelblue");
+
+            $('ol li:visible').css("background-color","steelblue");
         });
     </script>
 </body>
