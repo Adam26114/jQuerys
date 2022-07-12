@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>:first() $ :last() Selector</title>
+    <title>:visible & :hidden Selector</title>
     <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico"/>
     <style type="text/css">
         body{
@@ -12,9 +12,8 @@
             align-items:center;
         }
 
-        .box{
-            width:200px;
-            height:100px;
+        .container{
+           width:500px;
         }
     </style>
 </head>
@@ -57,16 +56,8 @@
         $(document).ready(function(){
             // console.log('hi');
 
+            //:visible
             
-            //:first
-            // $("ul li:first").css("background-color","steelblue");
-            $("li:first").css("background-color","steelblue");
-
-
-            // :last
-            // $("ol li:last").css("background-color","steelblue");
-            $("ol li:last").css("background-color","violet");
-
         });
     </script>
 </body>
