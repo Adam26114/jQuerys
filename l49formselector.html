@@ -41,6 +41,7 @@
 
         .form-check{
             display:flex;
+
         }
         
     </style>
@@ -120,8 +121,24 @@
             // });
             
             // :checkbox
-            $(':checkbox').css({
-                "accent-color":"red"
+            // $(':checkbox').css({
+            //     "accent-color":"red"
+            // });
+          
+            // :radio
+            // $(':radio').css({
+            //     "accent-color":"red"
+            // });
+           
+            // :checked for redio
+            $('input[type=checkbox]').click(function(){
+                // console.log('hi');
+
+                if($("input[name=favcolor]").is(':checked')){
+                    console.log('favcolor checked');
+                }else{
+                    console.log('favcolor not yet checked');
+                }
             });
         });
 
