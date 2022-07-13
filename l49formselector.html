@@ -131,15 +131,35 @@
             // });
            
             // :checked for redio
-            $('input[type=checkbox]').click(function(){
-                // console.log('hi');
+            // $('input[type=checkbox]').click(function(){
+            //     // console.log('hi');
 
-                if($("input[name=favcolor]").is(':checked')){
-                    console.log('favcolor checked');
-                }else{
-                    console.log('favcolor not yet checked');
+            //     if($("input[name=favcolor]").is(':checked')){
+            //         console.log('favcolor checked');
+            //     }else{
+            //         console.log('favcolor not yet checked');
+            //     }
+            // });
+
+
+            // $('input[type=checkbox]').click(function(){
+            //     if($(this).val() === "red"){
+            //         console.log($(this).is(':checked') ? 'My Fav Color is red' : 'Sorry My Fav Color is not red');
+            //     }else if($(this).val() === "green"){
+            //         console.log($(this).is(':checked') ? 'My Fav Color is Green' : ' Sorry My Fav Color is not green');
+            //     }else if($(this).val() === "blue"){
+            //         console.log($(this).is(':checked') ? 'My Fav Color is Blue' : ' Sorry My Fav Color is not Blue');
+            //     }
+            // });
+
+            // :checked for redio
+            $("input[type=radio]").click(function(){
+                if($("input[name=gender]").is(':checked')){
+                    console.log('gender checked');
                 }
             });
+
+
         });
 
     </script>
