@@ -84,6 +84,15 @@
                 <input type="radio" name="gender" id="genderf" class="form-check-input" value="0"><label for="genderf">Female</label>
             </div>
             
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" id="country" class="fonr-control">
+                    <option selected disabled>Choose Country</option>
+                    <option value="mm">Myanmar</option>
+                    <option value="th">Thailand</option>
+                    <option value="ido">Indonesia</option>
+                </select>
+            </div>
 
             <input type="reset" class="btn" value="Reset" />
             <button type="submit" class="btn">Submit</button>
@@ -153,11 +162,38 @@
             // });
 
             // :checked for redio
-            $("input[type=radio]").click(function(){
-                if($("input[name=gender]").is(':checked')){
-                    console.log('gender checked');
-                }
-            });
+            // $("input[type=radio]").click(function(){
+            //     if($("input[name=gender]").is(':checked')){
+            //         console.log('gender checked');
+            //     }
+            // });
+
+            // $("input[type=radio]").click(function(){
+
+            //     if($(this).val() === '1'){
+            //         console.log('I am Male');
+            //     }else{
+            //         console.log('I am Female');
+            //     }
+            // });
+
+            // :selelcted
+            $('#country').change(function(){
+                // console.log('hi');
+
+                // var getcountry = $(this);
+                // console.log(getcountry.val());
+                // console.log(getcountry.text());
+                
+                
+                // var getcountry = $(':selected');
+                // var getcountry = $('#country :selected');
+                var getcountry = $('#country option:selected');
+                console.log(getcountry.val());
+                console.log(getcountry.text());
+
+
+            })
 
 
         });
