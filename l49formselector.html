@@ -79,14 +79,13 @@
 
             <div class="form-group form-check">
                 <label>Gender</label>
-                <input type="radio" name="gender" id="genderm" class="form-check-input" value="1"><label for="genderm">Male</label>
-
+                <input type="radio" name="gender" id="genderm" class="form-check-input" value="1"><label for="genderm">Male</label>            
                 <input type="radio" name="gender" id="genderf" class="form-check-input" value="0"><label for="genderf">Female</label>
-
-                <input type="reset" class="btn" value="Reset" />
-                <button type="submit" class="btn">Submit</button>
-
             </div>
+            
+
+            <input type="reset" class="btn" value="Reset" />
+            <button type="submit" class="btn">Submit</button>
         </form>
     </div>
     
@@ -94,6 +93,25 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // console.log('h1');
+
+            // input tag (not included button)
+            // $('input').css({
+            //     "background-color":"yellow",
+            //     "border":"1px dashed red"
+            // });
+            
+            // :input tag (included button)
+            // $(':input').css({
+            //     "background-color":"yellow",
+            //     "border":"1px dashed red"
+            // });
+           
+            
+            // :text
+            $(':text').css({
+                "background-color":"yellow",
+                "border":"1px dashed red"
+            });
         });
 
     </script>
