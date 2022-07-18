@@ -50,7 +50,7 @@
 
     <div class="container">
 
-        <img src="./img/logo1.png" alt="logo1"/> <!--:image selector does not work for img -->
+        <!-- <img src="./img/logo1.png" alt="logo1"/> :image selector does not work for img -->
 
         <form action="" method="" enctype="multipart/form-data">
 
@@ -104,6 +104,11 @@
             <div class="form-group">
                 <lable class="nrc">NRC</lable>
                 <input type="file" name="nrc" id="nrc" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <span title="formember">Already Reginster ???</span> <a href="#" id="loginlink" title="formember">Login Here</a>
+                <p title="forthx">Thank you for paying attention</p>
             </div>
 
             <input type="reset" class="btn" value="Reset" />
@@ -234,6 +239,20 @@
                 e.preventDefault();
             })
 
+
+            // $('[id]').css("color","red");
+            // $('[class]').css("color","steelblue");
+            // $('[title]').css("color","orange");
+            
+            // $("[title='formember']").css("color","orange");
+            
+
+            // $("span[title]").css("color","green");
+            // $("a[title]").css("color","cyan");
+            $("p[title]").css("color","blue");
+
+
+            $("p[title='forthx']").css("color","violet");
 
         });
 
