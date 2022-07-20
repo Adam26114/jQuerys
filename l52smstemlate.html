@@ -65,7 +65,7 @@
             </div>
 
             <div class="form-group justify-content-end">
-                <button type="submit">Send</button>
+                <button type="submit" disabled>Send</button>
             </div>
         </form>
     </div>
@@ -103,7 +103,15 @@
                 }else{
                     $('#totalsms').text("5");
                 }
-            })
+
+                if($.trim($(this).val()) !== ""){
+                    $('[type=submit]').removeAttr('disabled')
+                }else{
+                    $('[type=submit]').attr("disabled",true);
+                }
+            });
+
+
         });
     </script>
 </body>
