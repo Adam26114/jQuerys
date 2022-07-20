@@ -80,7 +80,16 @@
 
             var maxlength = $('#message').attr("maxlength");
 
-            $("#charcounts").text(maxlength + " characters are remaining.");
+            $("#charcounts").text(maxlength + " characters are remaining. ");
+
+            $('#message').keyup(function(){
+                var getsmslength = $(this).val().length;
+                // console.log(getsmslength);
+
+                var remainingchars = maxlength - getsmslength;
+
+                $("#charcounts").text(remainingchars + " characters are remaining.");
+            })
         });
     </script>
 </body>
