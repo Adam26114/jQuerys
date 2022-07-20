@@ -42,7 +42,7 @@
         <form action="" method="">
             <div class="form-group">
                 <label for="todojob">Todo Job</label>
-                <input type="text" name="todojob" id="todojob" class="form-control">
+                <input type="text" name="todojob" id="todojob" class="form-control" placeholder="Enter something">
             </div>
             
             <div class="form-group">
@@ -62,6 +62,9 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // console.log('hi');
+
+            var phfortodojob = "Enter your new job"
+            $("#todojob").val(phfortodojob);
 
             $('form').submit(function(e){
                 // console.log('i am working'); 
