@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>SMS Template - Single</title>
-    <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico"/>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/733/733533.png"/>
     <style type="text/css">
 
         *{
@@ -60,7 +60,7 @@
 
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your sms"></textarea>
+                <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your sms" disabled></textarea>
                 <span id="charcounts"></span><span>(</span><b id="totalsms">0</b><span>/5 SMS)</span>
             </div>
 
@@ -81,6 +81,16 @@
             var maxlength = $('#message').attr("maxlength");
 
             $("#charcounts").text(maxlength + " characters are remaining. ");
+
+            $('#number').keyup(function(){
+                if($.trim($(this).val()) !== "" && $.trim($(this).val().length) >= 9 ){
+                    $("#message").removeAttr("disabled");
+                }else{
+                    $('#message').attr("disabled",true);
+                    $("[type=submit]").attr("disabled",true);
+                }
+            });
+
 
             $('#message').keyup(function(){
                 var getsmslength = $(this).val().length;
@@ -109,6 +119,20 @@
                 }else{
                     $('[type=submit]').attr("disabled",true);
                 }
+            });
+
+
+            // get value
+            $("form").submit(function(e){
+                var getdatas = {
+                    number: $('#number').val(),
+                    message: $('#message').val()
+                };
+
+                console.log(getdatas);
+
+                e.preventDefault();
+
             });
 
 
