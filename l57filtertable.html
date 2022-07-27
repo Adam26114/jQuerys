@@ -4,6 +4,10 @@
     <title>Filter Table</title>
     <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico"/>
     <style type="text/css">
+        *{
+            box-sizing:border-box;
+        }
+
         body{
             height:100vh;
 
@@ -11,18 +15,60 @@
             justify-content:center;
             align-items:center;
         }
+        
+        .container{
+            width:700px;
+        }
+
+        .form-control{
+            width:100%;
+
+            font-size: 16px;
+            border:1px solid #ddd;
+
+            padding:12px 20px 12px 50px;
+            margin-bottom:15px;
+        }
+
+        .form-control:focus{
+            outline:none;
+        }
+
+        #datatable{
+            width:100%;
+            border:1px solid #ccc;
+            border-collapse:collapse;
+        }
+
+        #datatable .header{
+            background-color:#f4f4f4;
+        }
+
+        #datatable tr{
+            border-bottom:1px solid #ddd;
+        }
+
+        #datatable tr:hover{
+            background-color:#f4f4f4;
+            cursor:pointer;
+        }
+
+        #datatable th,#datatable td{
+            text-align:left;
+            padding:10px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h2>Customer List</h2>
-        <input type="text" name="search" class="form-control" placeholder="Search for something...">
+        <input type="text" name="search" id="search" class="form-control" placeholder="Search for something...">
         <table id="datatable">
-            <thead>
-                <th>Name</th>
-                <th>Age</th>
-                <th>City</th>
+            <thead class="header">
+                <th style="width:60%;">Name</th>
+                <th style="width:10%;">Age</th>
+                <th style="width:30%;">City</th>
             </thead>
             <body>
                 <tr>
@@ -83,7 +129,84 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // console.log('hi');
+
+            $("#search").keyup(function(){
+                var getinput = $(this).val().toLowerCase();
+                console.log(getinput);
+
+                // filter for all column A
+                // $('#datatable tr').filter(function(){
+                    // console.log($('#datatable tr'));
+                    // console.log($(this));
+
+                    // console.log($(this).text());
+                    // console.log($(this).text().toLowerCase().indexOf(getinput) > -1);
+                    
+
+                    // $(this).toggle($(this).text().toLowerCase().indexOf(getinput) > 1)
+                    
+                // });
+
+                // filter for all column B
+                // $('#datatable tr').filter(function(){
+                //     if($(this).text().toLowerCase().indexOf(getinput) > -1){
+                //         $(this).show();
+                //     }else{
+                //         $(this).hide();
+                //     }
+                // });
+                
+                // filter for all column C
+                // $('#datatable tr').filter(function(){
+                //     if($(this).text().toLowerCase().indexOf(getinput) > -1){
+                //         $(this).css({
+                //             display:''
+                //             // display:'table-row'
+                //         });
+                //     }else{
+                //         $(this).css({
+                //             display:'none'
+                //         });
+                //     }
+                // });
+
+                
+                //filter for first colum A
+                // $('#datatable tr').filter(function(){
+                //     $(this).toggle($(this).children().eq(0).text().toLowerCase().indexOf(getinput) > -1)
+                // });
+
+                //filter for first colum B
+                // $('#datatable tr').filter(function(){
+                //     $(this).toggle($(this).children().eq(1).text().toLowerCase().indexOf(getinput) > -1)
+                // });
+
+                //filter for first colum C
+                // $('#datatable tr').filter(function(){
+                //     $(this).toggle($(this).children(":eq(1)").text().toLowerCase().indexOf(getinput) > -1)
+                // });
+
+                // filter for all column D
+                $("##datatable tr").filter(function(){
+                    if($(this).children(":eq(0)").text().toLowerCase().indexOf(getinput) > -1){
+                        $(this).css({
+                            display:''
+                            // display:'table-row'
+                        })
+                    }else{
+                        $(this).css({
+                            display:"none" 
+                        })
+                    }
+                });
+
+
+
+
+            });
         });
     </script>
 </body>
 </html>
+
+<!-- 27FT -->
