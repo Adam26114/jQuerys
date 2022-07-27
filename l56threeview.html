@@ -52,15 +52,26 @@
         }
 
         .bigcap::before{
-            content:'>';
+            content:'\25B6';
             font-family:'Font Awesome 5 Free';
-            color:#000;
+            /* color:#000; */
             margin-right:6px;
+            display:inline-block;
+
+            transform-origin:left;
+            transition:all 0.3s;
         }
 
-        .godown::before{
-            content:'';
-            transform:rotate(90deg);
+        .bigcap.godown::before{
+            transform:translate(8px,-8px) rotate(90deg);
+        }
+
+        .nested{
+            display:none;
+        }
+        
+        .active{
+            display:block;
         }
     </style>
 </head>
@@ -70,7 +81,7 @@
 
         <div class="browserpannel">
 
-            <div class="tabbar godown">
+            <div class="tabbar">
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -81,14 +92,37 @@
                 <p>Chief Technology Officer</p>
 
                 <ul>
-                    <li><span class="bigcap">Summary Bio</span>
-                        <ul class="nested">
+                    <li><span class="bigcap godown">Summary Bio</span>
+                        <ul class="nested active">
                             <li>Age: 35</li>
                             <li>Married Status : Married</li>
                             <li>Nationality : Japanese</li>
                         </ul>
+
                     </li>
                 </ul>
+
+                <ul>
+                    <li>
+                        <span class="bigcap">Working Experience</span>
+                        <ul class="nested">
+                            <li>
+                                <span class="bigcap">2020</span>
+                                <ul class="nested">
+                                    <li>2020 - Project Director AT SUDO Technology Co/.Ltd</li>
+                                    <li>2018 - Project Director AT BARBU Technology Co/.Ltd</li>
+                                    <span class="bigcap">2015</span>
+                                    <ul class="nested">
+                                        <li>2013 - Project Director AT YUKI Technology Co/.Ltd</li>
+                                        <li>2018 - Project Director AT MULIE Technology Co/.Ltd</li>
+
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
 
         </div>
@@ -99,6 +133,10 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // console.log('hi');
+            $(".bigcap").click(function(){
+                $(this).toggleClass("godown");
+                $(this).siblings().toggleClass("active")
+            });
         });
     </script>
 </body>
