@@ -42,6 +42,26 @@
         .content{
             padding:20px;
         }
+
+        ul{
+            list-style:none;
+        }
+
+        .bigcap{
+            cursor:pointer;
+        }
+
+        .bigcap::before{
+            content:'>';
+            font-family:'Font Awesome 5 Free';
+            color:#000;
+            margin-right:6px;
+        }
+
+        .godown::before{
+            content:'';
+            transform:rotate(90deg);
+        }
     </style>
 </head>
 <body>
@@ -50,7 +70,7 @@
 
         <div class="browserpannel">
 
-            <div class="tabbar">
+            <div class="tabbar godown">
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
