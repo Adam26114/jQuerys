@@ -27,14 +27,15 @@
         </div>
 
         <ul>
-            <li>Name : <span>???</span></li>
-            <li>Age : <span>???</span></li>
-            <li>Phone : <span>???</span></li>
+            <li>Name : <span data-name="Mr.June">???</span></li>
+            <li>Age : <span data=age="25">???</span></li>
+            <li>Phone : <span data-phone-nnumber="09422042242">???</span></li>
         </ul>
 
         <div>
             <button type="button" class="newcaption-btn">New Caption</button>
             <button type="button" class="removecaption-btn">Remove Caption</button>
+            <button type="button" class="showinfo-btn">Show Info</button>
         </div>
     </div>
     
@@ -57,6 +58,12 @@
                 $('div').removeData('newcaption');
 
                 console.log("After removeData = ", $('div').data('newcaption'));
+            });
+
+            $('.showinfo-btn').click(function(){
+                // console.log("ul li:first span").attr("name");
+
+                var getname = $("ul li:first span");
             });
         });
 
