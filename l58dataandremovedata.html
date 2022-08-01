@@ -36,6 +36,8 @@
             <button type="button" class="newcaption-btn">New Caption</button>
             <button type="button" class="removecaption-btn">Remove Caption</button>
             <button type="button" class="showinfo-btn">Show Info</button>
+            <button type="button" class="attrid-btn" data-id="123456">Attribute ID</button>
+            <button type="button" class="dataid-btn" data-id="654321">Data ID</button>
         </div>
     </div>
     
@@ -74,6 +76,22 @@
                 $("ul li:first span").text(getname);
                 $("ul li:nth-child(2) span").text(getage);
                 $("ul li:last span").text(getphone);
+            });
+
+            $('.attrid-btn').click(function(){
+                var getattrid = $(this).attr("data-id");
+                console.log(getattrid,  typeof getattrid);
+            });
+
+            $(".dataid-btn").click(function(){
+                var getdataid = $(this).data("id");
+                console.log(getdataid,typeof getdataid); //will reurn the numbber 654321 by number from attribute
+
+
+                $(this).data('id',"543216");
+                getdataid = $(this).data("id");
+
+                console.log(getdataid,typeof getdataid); // will return the string 543216 ny string from overwite
             });
         });
 
