@@ -53,6 +53,10 @@
 
             $(".removecaption-btn").click(function(){
                 console.log("Before removeData = ", $('div').data('newcaption'));
+                
+                $('div').removeData('newcaption');
+
+                console.log("After removeData = ", $('div').data('newcaption'));
             });
         });
 
