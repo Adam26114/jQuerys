@@ -28,8 +28,8 @@
 
         <ul>
             <li>Name : <span data-name="Mr.June">???</span></li>
-            <li>Age : <span data=age="25">???</span></li>
-            <li>Phone : <span data-phone-nnumber="09422042242">???</span></li>
+            <li>Age : <span data-age="25">???</span></li>
+            <li>Phone : <span data-phone-number="09422042242">???</span></li>
         </ul>
 
         <div>
@@ -61,9 +61,19 @@
             });
 
             $('.showinfo-btn').click(function(){
+                // $("ul li:first span").text("Ko Kyaw");
                 // console.log("ul li:first span").attr("name");
 
-                var getname = $("ul li:first span");
+                var getname = $("ul li:first span").data("name");
+                var getage = $('ul li:nth-child(2) span').data("age");
+                var getphone = $("ul li:last span").data("phone-number");
+
+                console.log(getname,getage,getphone);
+                console.log(typeof getname,typeof getage,typeof getphone);
+
+                $("ul li:first span").text(getname);
+                $("ul li:nth-child(2) span").text(getage);
+                $("ul li:last span").text(getphone);
             });
         });
 
