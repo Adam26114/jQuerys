@@ -23,7 +23,7 @@
         }
 
         .form{
-            margin:20px 10px;
+            padding:20px;
         }
 
         .form-group{
@@ -38,6 +38,8 @@
         .justify-content-end{
             display:flex;
             justify-content:end;
+
+            margin-bottom:20px;
         }
 
         .gallery{
@@ -49,14 +51,20 @@
             padding:10px;
         }
 
+        .gallery img{
+            width:100px;
+            height:100px;
+            border:2px dashed #aaa;
+            border-radius:10px;
+            object-fit:cover;
+            padding:5px;
+            margin:0 5px;
+        }
+
         .removetxt span{
             display:none;
         }
 
-        .gallery img{
-            width:100px;
-            height:100px;
-        }
     </style>
 </head>
 <body>
@@ -73,7 +81,7 @@
             </div>
         </form>
 
-        <div class="gallery removetxt">
+        <div class="gallery ">
             <span>Choose Images</span>
         </div>
     </div>
@@ -84,7 +92,29 @@
             // console.log('hi');
 
             var previewimages = function(input,output){
+                console.log(input.files);
 
+                if(input.files){
+                    var totalfiles = input.files.length;
+                    // console.log(totalfiles);
+
+                    if(totalfiles > 0){
+                        $('.gallery').addClass('removetxt');
+                    }else{
+                        $('.gallery').removeClass('removetxt');
+
+                    }
+
+                    for(var i=0 ; i < totalfiles ; i++){
+                        var filereader = new FileReader();
+
+                        filereader.onload = function(e){
+                            $($.parseHTML("<img>")).attr("src",e.target.result).appendTo(output);
+                        }
+
+                        filereader.readAsDataURL(input.files[i]);
+                    }
+                }
             };
 
             $("#coverphotos").change(function(){
@@ -94,3 +124,5 @@
     </script>
 </body>
 </html>
+
+<!-- 3DONE -->
