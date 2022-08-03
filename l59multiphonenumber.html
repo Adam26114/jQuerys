@@ -25,6 +25,10 @@
             padding:15px;
         }
 
+        .fomr-group label{
+            display:block;
+        }
+
         .form-control{
             width:80%;
             font-size:14px;
@@ -33,7 +37,7 @@
             margin:5px 0;
         }
 
-        .addbtn{
+        .addbtn,.removebtn{
             background-color:green;
             color:#fff;
             font-size:12px;
@@ -42,6 +46,10 @@
             padding:8px 10px ;
 
             margin:0 5px;
+        }
+
+        .removebtn{
+            background-color:red;
         }
     </style>
 </head>
@@ -55,6 +63,7 @@
         <form action="" method="">
 
             <div class="form-group phonenumbers">
+                <label for="phones">Mobile Number</label>
                 <input type="text" name="phones[]" id="phones" class="form-control"/><a href="javascript:void(0);" class="addbtn"><i class="fas fa-plus"></i></a>
             </div>
 
@@ -73,9 +82,22 @@
             var addbtn = $('.addbtn');
             var addbtn = $('.addbtn');
             var phonebox = $('.phonenumbers');
+            var newphoneel;
+            var x = 1;
 
             $('.addbtn').click(function(){
-                console.log('hey i am working');
+                // console.log('hey i am working');
+
+                if(x < maxnumber){
+                    x++;
+                    newphoneel = ` 
+                    <div>
+                        <input type="text" name="phones[]" id="phones${x}" class="form-control"/><a href="javascript:void(0);" class="removebtn"><i class="fas fa-trash-alt"></i></a>
+                    </div>`
+                    $(phonebox).append(newphoneel);
+                }else{
+
+                }
             });
         });
     </script>
