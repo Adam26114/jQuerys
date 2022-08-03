@@ -34,12 +34,12 @@
                     
                     <form action="" method="">
                         
-                        <div id="expboxs" class="input-group mb-3">
+                        <div id="expboxes" class="input-group mb-3 expboxes">
                             <input type="text" name="exps[]" id="exps" class="form-control form-control-sm rounded-0" placeholder="Enter Your Experiences">
                         </div>
                         
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-success btn-sm rounded-0 addbtn" data-increment="1">Add More Input</button>
+                            <button type="button" class="btn btn-success btn-sm rounded-0 add-btn" data-increment="1">Add More Input</button>
                         </div>
                     </form>
                     
@@ -60,7 +60,21 @@
         <!-- custom js -->
         <script type="text/javascript">
             $(document).ready(function(){
-                console.log('hi');
+                // console.log('hi');
+
+                
+                $(".add-btn").click(function(){
+                    var getnewid = $(this).data('increment');
+                    // console.log(getnewid);
+
+                    var expboxes = $("#expboxes").wrap("<div></div>").parent().html();
+                    // console.log(expboxes);
+                    $('#expboxes').unwrap();
+
+                    // insertBefore
+                    $(expboxes).insertAfter($(".expboxes"));
+
+                })
             })
         </script>
     </body>
