@@ -77,10 +77,14 @@
 
                     $('.expboxes').last().attr('id','expboxes'+getnewid);
 
-                    $("#expboxes"+getnewid).append(`<button tyep="button" class="btn btn-danger btn-sm rounded-0 ms-3 removebtn" data-id="removebtn${getnewid}" >Remove</button>`);
+                    $("#expboxes"+getnewid).append(`<button tyep="button" class="btn btn-danger btn-sm rounded-0 ms-3 removebtn" data-id="removebtn${getnewid}">Remove</button>`);
 
                     getnewid++;
                     $(this).data('increment',getnewid);
+
+                    $(document).on('click','.removebtn',function(){
+                        $(this).parent().remove();
+                    });
                 });
             })
         </script>
