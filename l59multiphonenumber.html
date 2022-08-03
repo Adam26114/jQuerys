@@ -51,6 +51,10 @@
         .removebtn{
             background-color:red;
         }
+
+        .disable{
+            background-color:gray;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +68,7 @@
 
             <div class="form-group phonenumbers">
                 <label for="phones">Mobile Number</label>
-                <input type="text" name="phones[]" id="phones" class="form-control"/><a href="javascript:void(0);" class="addbtn"><i class="fas fa-plus"></i></a>
+                <input type="number" name="phones[]" id="phones" class="form-control"/><a href="javascript:void(0);" class="addbtn"><i class="fas fa-plus"></i></a>
             </div>
 
         </form>
@@ -85,6 +89,8 @@
             var newphoneel;
             var x = 1;
 
+            // add
+
             $('.addbtn').click(function(){
                 // console.log('hey i am working');
 
@@ -92,11 +98,11 @@
                     x++;
                     newphoneel = ` 
                     <div>
-                        <input type="text" name="phones[]" id="phones${x}" class="form-control"/><a href="javascript:void(0);" class="removebtn"><i class="fas fa-trash-alt"></i></a>
+                        <input type="number" name="phones[]" id="phones${x}" class="form-control"/><a href="javascript:void(0);" class="removebtn"><i class="fas fa-trash-alt"></i></a>
                     </div>`
                     $(phonebox).append(newphoneel);
                 }else{
-
+                    $(this).addClass('disable');
                 }
             });
         });
