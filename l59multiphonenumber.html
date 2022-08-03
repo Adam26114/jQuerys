@@ -52,7 +52,7 @@
             background-color:red;
         }
 
-        .disable{
+        .disabled{
             background-color:gray;
         }
     </style>
@@ -102,7 +102,19 @@
                     </div>`
                     $(phonebox).append(newphoneel);
                 }else{
-                    $(this).addClass('disable');
+                    $(this).addClass('disabled');
+                }
+            });
+
+            // Remove
+            $(phonebox).on("click",".removebtn",function(){
+                // console.log('hay hay...');
+
+                $(this).parent().remove();
+                x--; // <-ပြ့န်နှတ်ပေးရမယ်
+
+                if(x < 5){
+                    $(addbtn).removeClass('disabled');
                 }
             });
         });
